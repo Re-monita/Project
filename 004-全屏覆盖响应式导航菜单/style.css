@@ -1,0 +1,84 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+#menu-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+
+  transform: scale(0);
+  /* 添加过度 */
+  transition: 0.5s;
+}  
+
+/* 点击增加active类，通过对该类的scale设置显示出效果 */
+#menu-overlay.active{
+  transform: scale(1);
+}
+
+#menu-overlay ul{
+  position: relative;
+}
+
+#menu-overlay ul li{
+  position: relative;
+  list-style: none;
+  text-align: center;
+  display: block;
+}
+
+#menu-overlay ul li a{
+  position: relative;
+  text-decoration: none;
+  font-size: 3.5em;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+#menu-overlay ul li a:before{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 8px;
+  width: 100%;
+  background-color: #ff0;
+  transform: translateY(-50%) scaleX(0);
+  transform-origin: right;
+  transition: 0.5s transform;
+}
+
+#menu-overlay ul li a:hover:before{
+  transform: translateY(-50%) scaleX(1);
+  transform-origin: left;
+  transition: 0.5s transform;
+}
+
+#toggleIcon{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #ff0;
+  background-image: url(open.png);
+  z-index: 1;
+  cursor: pointer;
+}
+
+#toggleIcon.active{
+  background-color: #ff0;
+  background-image: url(close.png);
+}
+
