@@ -1,0 +1,21 @@
+bdoy{
+  margin: 0;
+  padding: 0;
+  background: #262626;
+}
+
+img{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 300px;
+  height: 300px;
+  transform: translate(-50%,-50%);
+  overflow: hidden;
+  transition: .5s ease-in-out;
+  filter: grayscale(100%);
+}
+
+img:hover{
+  filter: grayscale(0%);
+}
